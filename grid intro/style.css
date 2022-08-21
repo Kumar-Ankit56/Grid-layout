@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.grid-containter{
+    background: #eee;
+    max-width: 900px;
+    margin:  0 auto;
+    display: grid;
+    /* place-items: center; */
+    /* grid-template-columns: 300px 300px 300px; */
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 100px 200px 300px;
+    grid-gap: 10px;
+    /* here what does it mean as each div item will be width of 1fr that it will autometically select or divide from the max-width: ; */
+
+}
+/* grid template decide that how much column should be there and what will be the width of the each column and according to max-width that is set by the it will adjust by self. */
+
+.grid-containter>div{
+  background:#ccc;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #777;
+}
+
+
+/* start positioning the differernt div item to the different place of the grid container */
+.grid-containter>div:nth-child(1){
+    grid-column: 1/ span 2; 
+    /* we are saying that we want to start from the column 1 and expand to the widht of 2fr */
+}
+.grid-containter>div:nth-child(2){
+    grid-column: span 3; 
+    /* we are not specifying this item for start position so it autometically take the available position. */
+}
+.grid-containter>div:nth-child(2){
+    grid-column: span 3; 
+    /* we are not specifying this item for start position so it autometically take the available position. */
+}
+.grid-containter>div:nth-child(4){
+    grid-column:2/6; 
+    height: 200px;
+    /* align self and justify self used when you with single grid item */
+    align-self: end;
+    /* we are not specifying this item for start position so it autometically take the available position. */
+}
+.grid-containter>div:nth-child(5){
+    grid-column: span 3; 
+}
+.grid-containter>div:nth-child(6){
+    grid-column: span 3; 
+}
